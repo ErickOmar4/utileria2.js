@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
     <title>Document</title>
 </head>
 
@@ -12,17 +13,20 @@
     <h1>Formulario</h1>
     <div>
         <form>
-            <lable>Input ingrese su correo electronico </lable>
+            <lable>ingrese su correo electronico </lable>
             <input type="email" id="e_email_f" placeholder="ej: erick@g,ail.com">
-            <lable>Input ingrese sun texto de solo letras </lable>
+            <p class="respuestas" id="r_email"></p>
+            <lable>ingrese un texto de solo letras </lable>
             <input type="text" id="e_texto_f" placeholder="ej: eomksm sg">
+            <p class="respuestas" id="r_texto"></p>
 
             <div>
                 <h1>longitud de un numero</h1>
                 <lable> ingrese un numero </lable>
                 <input type="number" id="e_numero_f" placeholder="782">
-                <lable> ingrese la maxima longitud</lable>
+                <lable> ingrese la longitud esperada</lable>
                 <input type="number" id="e_max_longitud_f" placeholder="ej:7">
+                <p class="respuestas" id="r_logitud"></p>
             </div>
 
             <lable>ingrese su fecha de nacimento </lable>
@@ -31,15 +35,23 @@
             
             <lable> ingrese su contraseña requiere mayúscula, minúscula, número, carácter especial y mínimo 8 caracteres </lable>
             <input type="text" id="" placeholder="">
+            <p class="respuestas" id="r_"></p>
 
             <lable></lable>
             <input type="text" id="" placeholder="">
+            <p class="respuestas" id="r_"></p>
 
 
 
 
         </form>
     </div>
+    <button type="button" class="btn" onclick="validarFormulario()">Validar Formulario</button>
+    <a href="index.html">ir al index</a>
+
+    <script src="js/utileria.js"></script>
+    <script src="js/formulario.js"></script>
+
 </body>
 
 </html>

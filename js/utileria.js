@@ -9,7 +9,7 @@ function solo_letras(palabra){
 }
 
 function validarLongitud(entrada,longitud){
-    return n.toString().length === longitud;
+    return entrada.toString().length === Number(longitud);
 }
 
 function calcularEdad(fechaNacimiento_e){
