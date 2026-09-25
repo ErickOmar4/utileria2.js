@@ -42,3 +42,31 @@ function contarCaracteres(e_texto){
     return e_texto.length;
 }
 
+function contieneTexto(texto, palabra) {
+    return texto.toLowerCase().includes(palabra.toLowerCase());
+}
+
+function solo_numeros(entrada) {
+    let soloNumeros = /^\d+$/;
+    return soloNumeros.test(Number(entrada));
+}
+
+function validarTelefono(e_telefono) {
+   
+
+    let telefono = e_telefono.toString();
+    if (telefono.substring(0, 2) === "55") {
+        return telefono+"es de: Ciudad de México (CDMX)";
+    }
+
+    if (telefono.substring(0, 3) === "442" || telefono.substring(0, 3) === "446") {
+        return  telefono+"es de: Querétaro" ;
+    }
+
+    if (telefono.substring(0, 3) === "951") {
+        return telefono+"es de: Oaxaca" ;
+    }
+
+    return "No se identifica la LADA del número";
+}
+

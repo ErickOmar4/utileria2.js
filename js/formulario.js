@@ -8,6 +8,9 @@ function validarFormulario() {
     let longitud = document.getElementById("e_max_longitud_f").value;
     let fechaNacimiento = document.getElementById("e_fecha_nacimiento_f").value;
     let contraseña = document.getElementById("e_contraseña").value;
+    let texto_completo = document.getElementById("textooo").value;
+    let palabra_buscada = document.getElementById("e_palabra_b").value;
+    let telefono = document.getElementById("e_telefono").value;
 
     if (validarCorreo(correoElectronico)) {
         document.getElementById("r_email").textContent = "Correo válido";
@@ -45,14 +48,38 @@ function validarFormulario() {
 
     if(contraseña !== ""){
         if(validarPassword(contraseña)){
-            document.getElementById("r_contraseña").textContent = "la contraseña tiene formato valido"
+            document.getElementById("r_contraseña").textContent = "la contraseña tiene formato valido";
         }else{
-            document.getElementById("r_contraseña").textContent = "la contraseña tiene no formato valido "
+            document.getElementById("r_contraseña").textContent = "la contraseña tiene no formato valido ";
         }
         
     }
 
-    if(){
-        
+
+    if(texto_completo !== "" && palabra_buscada !==""){
+        if(contieneTexto(texto_completo,palabra_buscada)){
+            document.getElementById("r_palabra_b").textContent = "la palabra " + palabra_buscada +" si se encunetra en el texto";
+        }else{
+             document.getElementById("r_palabra_b").textContent = "la palabra " + palabra_buscada +" no se encunetra en el texto";            
+        }
+
     }
+
+    if(telefono !== ""){
+        if(validarLongitud(telefono,10)){
+            if(solo_numeros(telefono)){
+                document.getElementById("r_telefono").textContent = validarTelefono(telefono);
+            }else{
+                document.getElementById("r_telefono").textContent = "solo números";
+            }
+        }else{
+            document.getElementById("r_telefono").textContent = "el telefono debe tener 10 numeros";
+        }
+    }else{
+            document.getElementById("r_telefono").textContent = "ingrese un numero telefonico";
+    }
+
+
+
+
 }

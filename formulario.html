@@ -39,12 +39,34 @@
             <p class="respuestas" id="r_contraseña"></p>
 
 
-
-
-
         </form>
     </div>
     <button type="button" class="btn" onclick="validarFormulario()">Validar Formulario</button>
+
+    <div>
+        <h2>otras validaciones </h2>
+
+        <div>
+                <h1>longitud de un numero</h1>
+                <lable> ingrese una texto </lable>
+                <textarea id="textooo"name="texto_1" rows="6" cols="40" placeholder=" texto ..."></textarea>
+                <lable> ingrese una palabra a buscar</lable>
+                <input type="text" id="e_palabra_b" placeholder="ej:vaca" required>
+                <p class="respuestas" id="r_palabra_b"></p>
+
+                <lable> ingrese un numero de telefono de mexico </lable>
+                <br>
+                <label>ladas</label>
+                <li>
+                    <ul>55: Ciudad de México</ul>
+                    <ul>442: Querétaro</ul>
+                    <ul>951: Oaxaca</ul>
+                </li>
+                <input type="number" id="e_telefono" placeholder="ej:9516451234" required>
+                <p class="respuestas" id="r_telefono"></p>
+            </div>
+    </div>
+
     <a href="index.html">ir al index</a>
 
     <script src="js/utileria.js"></script>
