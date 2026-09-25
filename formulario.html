@@ -1,77 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!--  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">-->
-    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <title>Formulario</title>
 </head>
-
 <body>
+    <div class="pagina form-layout">
+        <header>
+            <h1>Formulario</h1>
+        </header>
+        <section class="card">
+            <form>
+                <div class="campo">
+                    <label for="e_email_f">Ingrese su correo electrónico</label>
+                    <input type="email" id="e_email_f" placeholder="ej: erick@gmail.com" required>
+                    <p class="respuestas" id="r_email"></p>
+                </div>
 
-    <h1>Formulario</h1>
-    <div>
-        <form>
-            <lable>ingrese su correo electronico </lable>
-            <input type="email" id="e_email_f" placeholder="ej: erick@g,ail.com" required>
-            <p class="respuestas" id="r_email"></p>
-            <lable>ingrese un texto de solo letras </lable>
-            <input type="text" id="e_texto_f" placeholder="ej: eomksm sg" required>
-            <p class="respuestas" id="r_texto"></p>
+                <div class="campo">
+                    <label for="e_texto_f">Ingrese un texto de solo letras</label>
+                    <input type="text" id="e_texto_f" placeholder="ej: eomksm sg" required>
+                    <p class="respuestas" id="r_texto"></p>
+                </div>
 
-            <div>
-                <h1>longitud de un numero</h1>
-                <lable> ingrese un numero </lable>
-                <input type="number" id="e_numero_f" placeholder="782" required>
-                <lable> ingrese la longitud esperada</lable>
-                <input type="number" id="e_max_longitud_f" placeholder="ej:7">
+                <div class="field-group">
+                    <div class="campo">
+                        <label for="e_numero_f">Ingrese un número</label>
+                        <input type="number" id="e_numero_f" placeholder="782" required>
+                    </div>
+                    <div class="campo">
+                        <label for="e_max_longitud_f">Longitud esperada</label>
+                        <input type="number" id="e_max_longitud_f" placeholder="ej: 7">
+                    </div>
+                </div>
                 <p class="respuestas" id="r_logitud"></p>
+
+                <div class="campo">
+                    <label for="e_fecha_nacimiento_f">Ingrese su fecha de nacimiento</label>
+                    <input type="date" id="e_fecha_nacimiento_f" placeholder="18/05/2005" required>
+                    <p class="respuestas" id="r_FNacimiento"></p>
+                </div>
+
+                <div class="campo">
+                    <label for="e_contraseña">Ingrese su contraseña (mayúscula, minúscula, número, carácter especial, mínimo 8 caracteres)</label>
+                    <input type="text" id="e_contraseña" placeholder="Erick59#" required>
+                    <p class="respuestas" id="r_contraseña"></p>
+                </div>
+            </form>
+
+            <button type="button" class="btn" onclick="validarFormulario()">Validar Formulario</button>
+        </section>
+
+        <aside class="card">
+            <h2>Otras validaciones</h2>
+
+            <div class="campo">
+                <label for="textooo">Ingrese un texto</label>
+                <textarea id="textooo" name="texto_1" rows="6" cols="40" placeholder="texto ..."></textarea>
             </div>
 
-            <lable>ingrese su fecha de nacimento </lable>
-            <input type="date" id="e_fecha_nacimiento_f" placeholder="18/05/2005" required>
-            <p id="r_FNacimiento"></p>
-            
-            
-            <lable> ingrese su contraseña requiere mayúscula, minúscula, número, carácter especial y mínimo 8 caracteres </lable>
-            <input type="text" id="e_contraseña" placeholder="Erick59#" required>
-            <p class="respuestas" id="r_contraseña"></p>
-
-
-        </form>
-    </div>
-    <button type="button" class="btn" onclick="validarFormulario()">Validar Formulario</button>
-
-    <div>
-        <h2>otras validaciones </h2>
-
-        <div>
-                <h1>longitud de un numero</h1>
-                <lable> ingrese una texto </lable>
-                <textarea id="textooo"name="texto_1" rows="6" cols="40" placeholder=" texto ..."></textarea>
-                <lable> ingrese una palabra a buscar</lable>
-                <input type="text" id="e_palabra_b" placeholder="ej:vaca" required>
+            <div class="campo">
+                <label for="e_palabra_b">Ingrese una palabra a buscar</label>
+                <input type="text" id="e_palabra_b" placeholder="ej: vaca" required>
                 <p class="respuestas" id="r_palabra_b"></p>
+            </div>
 
-                <lable> ingrese un numero de telefono de mexico </lable>
-                <br>
-                <label>ladas</label>
-                <li>
-                    <ul>55: Ciudad de México</ul>
-                    <ul>442: Querétaro</ul>
-                    <ul>951: Oaxaca</ul>
-                </li>
-                <input type="number" id="e_telefono" placeholder="ej:9516451234" required>
+            <div class="campo">
+                <label for="e_telefono">Ingrese un número de teléfono de México</label>
+                <ul class="lada-list">
+                    <li>55: Ciudad de México</li>
+                    <li>442: Querétaro</li>
+                    <li>951: Oaxaca</li>
+                </ul>
+                <input type="number" id="e_telefono" placeholder="ej: 9516451234" required>
                 <p class="respuestas" id="r_telefono"></p>
             </div>
-    </div>
+        </aside>
 
-    <a href="index.html">ir al index</a>
+        <a class="nav-link" href="index.html">Ir al index</a>
+    </div>
 
     <script src="js/utileria.js"></script>
     <script src="js/formulario.js"></script>
-
 </body>
-
 </html>

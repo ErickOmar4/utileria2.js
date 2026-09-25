@@ -3,23 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/estilos.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="pagina">
+        <div class="card login-layout">
     <h1>Login</h1>
 
+    <div class="campo">
     <label for="correo">Ingrese su correo electronico</label>
     <input tipe="email" id="correo" placeholder="ej:Erick34@gmail.com">
     <p class="respuesta" id="email-r"></p>
+    </div>
+
+    <div class="campo">
     <lable for="password"> Ingrese su contraseña</lable>
     <input tipe="password" id="contraseña" placeholder="Erick2%#"c>
     <p class="respuesta" id="contraseña-r"></p>
+    </div>
 
     <button tipe="button" id="validarF" class="btn" onclick="iniciar_cesion()">Validar</button>
     
     <a linkreel="stylesheet" href="formulario.html"> Ir al formulario</a>
-    <br>
+    </div>
+    </div>
     <script src="js/utileria.js"></script>
     <script src="js/login.js"></script>
 </body>
