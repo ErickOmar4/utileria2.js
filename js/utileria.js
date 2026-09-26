@@ -1,3 +1,5 @@
+let mensaje_Vacio = "el campo esta vacio, ingrese lo que se pide";
+
 function validarCorreo(c) {
     let correo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return correo.test(c);
@@ -70,3 +72,22 @@ function validarTelefono(e_telefono) {
     return "No se identifica la LADA del número";
 }
 
+function campoNoVacio(elemento,campoValido){
+        if(campoValido !==""){
+            return true;
+        }else{
+            document.getElementById(elemento).style.color = "red";
+            document.getElementById(elemento).textContent = mensaje_Vacio;
+            return false;
+        }
+        
+    }
+
+    function entradaValida(elemento,campoValido){
+        document.getElementById(elemento).textContent = campoValido+" válido ";
+        document.getElementById(elemento).style.color = "green";
+    }
+    function entradaNo_valida(elemento,campoValido){
+        document.getElementById(elemento).textContent = campoValido+" no valido ";
+        document.getElementById(elemento).style.color = "red";
+    }

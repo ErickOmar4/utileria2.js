@@ -11,95 +11,66 @@ function validarFormulario() {
     let texto_completo = document.getElementById("textooo").value;
     let palabra_buscada = document.getElementById("e_palabra_b").value;
     let telefono = document.getElementById("e_telefono").value;
-    let mensaje_Vacio = "el campo esta vacio, ingrese lo que se pide";
-
-    function campoNoVacio(elemento,campoValido){
-        if(campoValido !==""){
-            return true;
-        }else{
-            document.getElementById(elemento).style.color = "red";
-            document.getElementById(elemento).textContent = mensaje_Vacio;
-            return false;
-        }
-        
-    }
-
-    function entradaValida(elemento,campoValido){
-        document.getElementById(elemento).textContent = campoValido+" válido ";
-        document.getElementById(elemento).style.color = "green";
-    }
-    function entradaNo_valida(elemento,campoValido){
-        document.getElementById(elemento).textContent = campoValido+" no valido ";
-        document.getElementById(elemento).style.color = "red";
-    }
-
+    
     if(campoNoVacio("r_email",correoElectronico)){
         if (validarCorreo(correoElectronico)) {
         entradaValida("r_email","correo");
     } else {
-        entradaNo_valida("r_email","correo")
+        entradaNo_valida("r_email","correo");
     }
     }
 
-
-
-    if (texto !== "") {
+    if(campoNoVacio("r_texto",texto)){
         if (solo_letras(texto)) {
-            document.getElementById("r_texto").textContent = "solo tiene letras";
-            document.getElementById("r_texto").style.color = "green";
-        } else {
-            document.getElementById("r_texto").textContent = "el no debe ingresar numeros";
-            document.getElementById("r_texto").style.color = "green";
-        }
+        entradaValida("r_texto","texto");
+    } else {
+        entradaNo_valida("r_texto","texto");
+    }
     }
 
-    if (numero !== "" && longitud !== "") {
+    if(campoNoVacio("r_logitud",numero)&&campoNoVacio("r_logitud",longitud) ){
         if (validarLongitud(numero, longitud)) {
-            document.getElementById("r_logitud").textContent = "si corresponde a la longitud";
-            document.getElementById("r_logitud").style.color = "green";
-        } else {
-            document.getElementById("r_logitud").textContent = "el número es diferente de la longitud esperada";
-            document.getElementById("r_logitud").style.color = "red";
-        }
+        entradaValida("r_logitud","el numero y la longitud si corresponden :");
+    } else {
+        entradaNo_valida("r_logitud","el numero tiene una longitud diferente :");
+    }
     }
 
-    if(fechaNacimiento !== ""){
-            document.getElementById("r_FNacimiento").textContent =calcularEdad(fechaNacimiento);
+
+    if(campoNoVacio("r_FNacimiento",fechaNacimiento)){
+         document.getElementById("r_FNacimiento").textContent = "su edad es "+calcularEdad(fechaNacimiento) +" años";
     }else{
         document.getElementById("r_FNacimiento").textContent= "seleccione su fecha de nacimiento";
     }
 
-    if(contraseña !== ""){
-        if(validarPassword(contraseña)){
-            document.getElementById("r_contraseña").textContent = "la contraseña tiene formato valido";
-        }else{
-            document.getElementById("r_contraseña").textContent = "la contraseña tiene no formato valido ";
-        }
-        
+
+    if(campoNoVacio("r_contraseña",contraseña)){
+        if (validarPassword(contraseña)) {
+        entradaValida("r_contraseña","la contraseña tiene el formato: ");
+    } else {
+        entradaNo_valida("r_contraseña","la contraseña tiene no tiene el formato : ");
+    }
     }
 
 
-    if(texto_completo !== "" && palabra_buscada !==""){
-        if(contieneTexto(texto_completo,palabra_buscada)){
-            document.getElementById("r_palabra_b").textContent = "la palabra " + palabra_buscada +" si se encunetra en el texto";
-        }else{
-             document.getElementById("r_palabra_b").textContent = "la palabra " + palabra_buscada +" no se encunetra en el texto";            
-        }
-
+    if(campoNoVacio("r_palabra_b",texto_completo)&&campoNoVacio("r_palabra_b",palabra_buscada) ){
+        if (contieneTexto(texto_completo,palabra_buscada)) {
+        entradaValida("r_palabra_b","la palabra " + palabra_buscada +" si se encunetra en el texto");
+    } else {
+        entradaNo_valida("r_palabra_b","la palabra " + palabra_buscada +" no se encunetra en el texto");
+    }
     }
 
-    if(telefono !== ""){
+    if(campoNoVacio("r_telefono",telefono)){
         if(validarLongitud(telefono,10)){
             if(solo_numeros(telefono)){
-                document.getElementById("r_telefono").textContent = validarTelefono(telefono);
+                entradaValida("r_telefono",validarTelefono(telefono));
             }else{
-                document.getElementById("r_telefono").textContent = "solo números";
+                entradaNo_valida("r_telefono","solo números");
             }
         }else{
-            document.getElementById("r_telefono").textContent = "el telefono debe tener 10 numeros";
+            entradaNo_valida("r_telefono","el telefono debe tener 10 numeros :");
         }
-    }else{
-            document.getElementById("r_telefono").textContent = "ingrese un numero telefonico";
     }
 
 

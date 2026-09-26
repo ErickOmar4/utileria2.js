@@ -1,20 +1,21 @@
 function iniciar_cesion(){
-    let correo = document.getElementById("correo").value;
+    let correoElectronico = document.getElementById("correo").value;
     let contraseña = document.getElementById("contraseña").value;
 
-    if(validarCorreo(correo)){
-                document.getElementById("email-r").textContent = "Correo válido";
-                document.getElementById("email-r").style.color = "green";
-            }else{
-                document.getElementById("email-r").textContent = "Correo inválido";
-                document.getElementById("email-r").style.color = "red";
-            }
+    if(campoNoVacio("r_email",correoElectronico)){
+        if (validarCorreo(correoElectronico)) {
+        entradaValida("r_email","correo");
+    } else {
+        entradaNo_valida("r_email","correo");
+    }
+    }
 
-            if(validarPassword(contraseña)){
-                document.getElementById("contraseña-r").textContent = "Contraseña válida";
-                document.getElementById("contraseña-r").style.color = "green";
-            }else{
-                document.getElementById("contraseña-r").textContent = "mínimo 8 caracteres, mayúscula, minúscula,  número y  carácter especial.";
-                document.getElementById("contraseña-r").style.color = "red";
-            }
+    if(campoNoVacio("r_contraseña",contraseña)){
+        if (validarPassword(contraseña)) {
+        entradaValida("r_contraseña","la contraseña tiene el formato: ");
+    } else {
+        entradaNo_valida("r_contraseña","la contraseña tiene no tiene el formato : ");
+    }
+    }
+
 }
