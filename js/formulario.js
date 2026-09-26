@@ -11,14 +11,45 @@ function validarFormulario() {
     let texto_completo = document.getElementById("textooo").value;
     let palabra_buscada = document.getElementById("e_palabra_b").value;
     let telefono = document.getElementById("e_telefono").value;
+    let mensaje_Vacio = "el campo esta vacio, ingrese lo que se pide";
 
-    if (validarCorreo(correoElectronico)) {
-        document.getElementById("r_email").textContent = "Correo válido";
-        document.getElementById("r_email").style.color = "green";
-    } else {
-        document.getElementById("r_email").textContent = "Correo inválido";
-        document.getElementById("r_email").style.color = "red";
+    function campoNoVacio(elemento,campoValido){
+        if(campoValido !==""){
+            return true;
+        }else{
+            document.getElementById(elemento).style.color = "red";
+            document.getElementById(elemento).textContent = mensaje_Vacio;
+            return false;
+        }
+        
     }
+
+    function entradaValida(elemento,campoValido){
+        document.getElementById(elemento).textContent = campoValido+" válido ";
+        document.getElementById(elemento).style.color = "green";
+    }
+    function entradaNo_valida(elemento,campoValido){
+        document.getElementById(elemento).textContent = campoValido+" no valido ";
+        document.getElementById(elemento).style.color = "red";
+    }
+
+    if(campoNoVacio("r_email",correoElectronico)){
+        if (validarCorreo(correoElectronico)) {
+        entradaValida("r_email","correo");
+    } else {
+        entradaNo_valida("r_email","correo")
+    }
+    }
+/*
+    if(campoVacio(correoElectronico)){
+    if (validarCorreo(correoElectronico)) {
+        entradaValida("r_email","correo");
+    } else {
+        entradaNo_valida("r_email","correo")
+    }
+    }*/
+
+
 
     if (texto !== "") {
         if (solo_letras(texto)) {
@@ -83,3 +114,24 @@ function validarFormulario() {
 
 
 }
+
+
+function abrirModal(){
+            let fecha=document.getElementById("e_fecha_nacimiento_f").value;
+            if(fecha === ""){
+                document.getElementById("edadCalculada").textContent =
+                " ingrese una fecha de nacimiento para calcular.";
+            }else{
+
+                let edad = calcularEdad(fecha);
+
+                document.getElementById("edadCalculada").textContent =
+                "tienes" + edad + " años";
+
+            }
+            document.getElementById("modal").style.display="block";
+        }
+
+        function cerrarModal(){
+            document.getElementById("modal").style.display="none";
+        }

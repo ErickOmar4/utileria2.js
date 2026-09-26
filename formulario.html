@@ -40,6 +40,7 @@
                 <div class="campo">
                     <label for="e_fecha_nacimiento_f">Ingrese su fecha de nacimiento</label>
                     <input type="date" id="e_fecha_nacimiento_f" placeholder="18/05/2005" required>
+                    <button type="button"  class="btn" onclick="abrirModal() ">obtener Edad</button>
                     <p class="respuestas" id="r_FNacimiento"></p>
                 </div>
 
@@ -78,6 +79,14 @@
                 <p class="respuestas" id="r_telefono"></p>
             </div>
         </aside>
+
+        <div id="modal" class="modal">
+            <div class="contenidoModal">
+                <h3>Edad calculada</h3>
+                <p id="edadCalculada"></p>
+                <button type="button" class="btn" onclick="cerrarModal()">Cerrar</button>
+            </div>
+        </div>
 
         <a class="nav-link" href="index.html">Ir al index</a>
     </div>
