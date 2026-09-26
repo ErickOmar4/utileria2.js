@@ -40,14 +40,6 @@ function validarFormulario() {
         entradaNo_valida("r_email","correo")
     }
     }
-/*
-    if(campoVacio(correoElectronico)){
-    if (validarCorreo(correoElectronico)) {
-        entradaValida("r_email","correo");
-    } else {
-        entradaNo_valida("r_email","correo")
-    }
-    }*/
 
 
 

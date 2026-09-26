@@ -185,6 +185,22 @@ textarea::placeholder {
   background: var(--primary-dark);
 }
 
+.btn_links {
+  font-family: var(--font-ui);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary-dark);
+  border: none;
+  border-radius: var(--radius);
+  padding: 0.65rem 1.4rem;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn_links:hover {
+  background: var(--primary);
+}
 .btn:active {
   transform: translateY(1px);
 }
