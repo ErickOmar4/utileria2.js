@@ -72,7 +72,7 @@ function validarTelefono(e_telefono) {
     return "No se identifica la LADA del número";
 }
 
-function campoNoVacio(elemento,campoValido){
+function campoNoVacio(elemento,campoValido,mensaje_Vacio){
         if(campoValido !==""){
             return true;
         }else{
